@@ -1,0 +1,1 @@
+// Stateless. Contains the functions to make a note, remove, handle the input from notes. Will modify state passed down from MyArticles.js. 

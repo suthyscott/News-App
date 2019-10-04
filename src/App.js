@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {HashRouter} from 'react-router-dom';
+import axios from 'axios'
+import Router from './Router';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      savedArticles: []
+    }
+  }
+
+  handleSaveArticle = (article) => {
+    axios.post('/api/savedList', article) .then(res => {
+        this.setState({
+            savedArticles: res.data
+        })
+    })
+}
+
+  render() {
+  
+    return (
+          <HashRouter >
+          <div >
+            <Router handleSaveArticle={this.handleSaveArticle}/>
+            
+          </div>
+          </HashRouter>
+        );
+  }  
 }
 
 export default App;
