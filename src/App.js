@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   handleSaveArticle = (article) => {
-
+console.log('hit function')
     axios.post('/api/article', article).then(res => {
       // console.log(res.data)
         this.setState({

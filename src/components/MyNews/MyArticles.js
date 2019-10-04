@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import MyArticle from '../MyNews/MyArticle';
+import SingleArticle from './SingleArticle'
+import { thisTypeAnnotation } from '@babel/types';
 
 export default class MyArticles extends Component {
     constructor(){
@@ -11,25 +13,28 @@ export default class MyArticles extends Component {
         this.state = {
             list: ["hi"],
             comment: [],
-            input: ""
+            input: "",
         }
     }
 
     
 
-componentDidMount = () => { 
-    axios.get('/api/savedList').then(res => {
-     console.log(res.data[0].title)
-        this.setState({
-            list: res.data[0].title
+// componentDidMount = () => { 
+//     axios.get('/api/savedList').then(res => {    
+//         for(let i = 0; i < this.state.list.length; i++) {
+//         console.log(res.data[i].title)
+//         this.setState({
+//             list: [this.state.list, res.data[i].title]
 
-        })
-        console.log(this.state.list)
-    })
-    .catch(err => {
-        console.log(err)
-    })
-}
+//         })
+//     }
+//         console.log(this.state.list)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+    
+// }
 
 handleInput = e => {
     console.log('hit handleInput')
@@ -59,23 +64,33 @@ delete = index => {
     })
 }
 
+deleteArticle = index => {
+    axios.delete(`/api/displayedList/${index}`).then(res => {
+        this.setState({
+            list: res.data
+        })
+    })
+}
+
 updateState = updatedComment => {
     this.setState({
          comment: updatedComment
     })
 }
 
+
     render(){
-        console.log(this.state.list)
-        console.log(this.state.comment)
-        console.log(this.state.input)
-        // console.log(this.props.savedArticles)
+        // console.log(this.state.list)
+        console.log(this.props.savedArticles)
+        let {savedArticles} = this.props
         return (
             <div>
-                <section>
+                <section className='article-box-myArticles'>
                     
-                {this.state.list}
-                {/* {this.state.comment} */}
+                { savedArticles.map((element, index) => {
+                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle}/>
+                })}
+                
                </section>
 
                <section>

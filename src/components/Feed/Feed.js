@@ -3,6 +3,7 @@
 import React from 'react'
 import axios from 'axios';
 import Article from './Article';
+import Header from '../Header'
 import {Link} from 'react-router-dom'
 
 class Feed extends React.Component {
@@ -35,20 +36,24 @@ class Feed extends React.Component {
         // this is mapping over every element in our array, calling each one article and sending it to the component Article through props.
 
         // COMMENT OUT BELOW TO GET ALL NEWS ARTICLES.
-        let article = this.state.feed.slice(0, 1)
-        let articles = article.map((article) => {
-            return <Article article={article} handleSaveArticle={this.props.handleSaveArticle}/>
-        })
+        // let article = this.state.feed.slice(0, 1)
+        // let articles = article.map((article) => {
+        //     return <Article article={article} handleSaveArticle={this.props.handleSaveArticle}/>
+        // })
 
         // UNCOMMENT BELOW TO GET ALL NEWS ARTICLES
 
-        // let articles = this.state.feed.map((article) => {
-        //     return <Article article={article}/>
-        // })
+        let articles = this.state.feed.map((article) => {
+            return <Article article={article} handleSaveArticle={this.props.handleSaveArticle}/>
+        })
         return(
             <div>
+                <section id='header'>
+               <Link to='/myarticles'>
+                   <button>My Articles</button>
+                </Link>
+                </section>
                {articles}
-               <Link to='/myarticles'>My Articles</Link>
             </div>
         )
     }

@@ -19,7 +19,7 @@ class Article extends React.Component {
         // console.log(this.props)
         // console.log(this.state.state)
         return(
-            <div className='article-box'>
+            <div className='article-box-feed'>
 
                 {this.props.article.title}
 

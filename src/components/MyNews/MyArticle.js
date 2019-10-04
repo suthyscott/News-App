@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import MyArticles from './MyArticles';
 
 class MyArticle extends Component {
     constructor(props) {
@@ -39,6 +38,7 @@ class MyArticle extends Component {
     }
 
     render(){
+        console.log(this.props.element)
         return(
             <div>
 
@@ -54,6 +54,7 @@ class MyArticle extends Component {
           </article>
         ) : (
           <section>
+    
             {this.props.element}
             <button onClick={() => this.props.delete(this.props.index)}>Delete</button>
             <button onClick={() => this.edit()}>EDIT</button>

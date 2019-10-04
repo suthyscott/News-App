@@ -8,9 +8,9 @@ module.exports = {
         console.log(savedList)
     }, 
 
-    updateList(req, res) {
-        res.status(200).send(savedList)
-    },
+    // updateList(req, res) {
+    //     res.status(200).send(savedList)
+    // },
 
     addItem(req, res) {
         const {addOn} = req.body;
@@ -29,5 +29,11 @@ module.exports = {
         const {index} = req.params;
         savedList.splice(index, 1)
         res.status(200).send(savedList)
-    }
+    },
+
+    // deleteArticle(req, res) {
+    //     const {index} = req.params;
+    //     savedList.splice(index, 1)
+    //     res.status(200).send(savedList)
+    // }
 }

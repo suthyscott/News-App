@@ -1,5 +1,35 @@
-.article-box {
-  height: 200px;
-  width: 200px;
+body {
+  margin: 20px;
+  background-color: rgb(245, 151, 179);
+  /* background-image: url('https://media.gettyimages.com/photos/american-flag-blowing-and-rippling-in-the-wind-against-blue-sky-picture-id1150378713');
+  background-size: cover;
+  background-position: center; */
+}
+
+#header {
+  height: 30px;
+  background-color: blue;
+}
+
+.article-box-feed {
+  height: 300px;
+  width: 300px;
   border: 1px solid black;
+  background-color: antiquewhite
+}
+
+.article-box-myArticles {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  background-color: antiquewhite
+}
+
+.single-article {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 20px;
+  background-color: rgb(24, 50, 201)
 }
