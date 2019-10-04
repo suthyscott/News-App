@@ -1,23 +1,24 @@
 // Holds CRUD requests. 
 require("dotenv").config();
 
-const ac = require('./ArticleControllor')
 
 const express = require('express')
 const {SERVER_PORT} = process.env
 const app = express()
 app.use(express.json())
 
-const saved = []
-
+const ac = require('./ArticleControllor')
 // make endpoints here
-app.get('/api/saved', )
 
-app.post('/api/saved', ac.saveArticle )
+app.post('/api/article', ac.saveArticle )
 
-app.put('/api/saved', )
+app.get('/api/savedList', ac.updateList )
 
-app.delete('/api/saved', )
+app.post('/api/savedList', ac.addItem)
+
+app.put('/api/savedList', ac.editItem)
+
+app.delete('/api/savedList/:index', ac.deleteItem)
 
 
 

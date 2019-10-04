@@ -14,10 +14,15 @@ class App extends React.Component {
   }
 
   handleSaveArticle = (article) => {
-    axios.post('/api/savedList', article) .then(res => {
+
+    axios.post('/api/article', article).then(res => {
+      // console.log(res.data)
         this.setState({
             savedArticles: res.data
         })
+    })
+    .catch(err => {
+      console.log(err)
     })
 }
 
@@ -26,7 +31,7 @@ class App extends React.Component {
     return (
           <HashRouter >
           <div >
-            <Router handleSaveArticle={this.handleSaveArticle}/>
+            <Router handleSaveArticle={this.handleSaveArticle} savedArticles={this.state.savedArticles}/>
             
           </div>
           </HashRouter>

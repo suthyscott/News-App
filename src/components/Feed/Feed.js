@@ -21,8 +21,8 @@ class Feed extends React.Component {
             this.setState({
                 feed: res.data.articles
             })
-            console.log(typeof this.state.feed)
-            console.log(this.state.feed)
+            // console.log(typeof this.state.feed)
+            // console.log(this.state.feed)
         })
         .catch(err => {
             console.log(err)
@@ -30,8 +30,8 @@ class Feed extends React.Component {
     }
 
     render(){
-        console.log(this.state.feed)
-        console.log(this.props)
+        // console.log(this.state.feed)
+        // console.log(this.props)
         // this is mapping over every element in our array, calling each one article and sending it to the component Article through props.
 
         // COMMENT OUT BELOW TO GET ALL NEWS ARTICLES.
