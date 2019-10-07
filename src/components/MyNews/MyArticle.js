@@ -44,16 +44,17 @@ class MyArticle extends Component {
 
 
         {this.state.editing ? (
-          <article>
+          <article >
             <input
               value={this.state.editInput}
               name="editInput"
               onChange={e => this.handleInput(e)}
+              
             />
             <button onClick={() => this.save()}>Save</button>
           </article>
         ) : (
-          <section>
+          <section className='comment-tools'>
     
             {this.props.element}
             <button onClick={() => this.props.delete(this.props.index)}>Delete</button>

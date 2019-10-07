@@ -19,13 +19,18 @@ class Article extends React.Component {
         // console.log(this.props)
         // console.log(this.state.state)
         return(
-            <div className='article-box-feed'>
+            <div id='feed-display'>
+                <div className='article-box-feed'>
 
-                {this.props.article.title}
+                    {this.props.article.title}
 
-                <button onClick={() => this.props.handleSaveArticle(this.props.article)}>Save</button>
+                    <section className='save-button'>                
+                    <button onClick={() => this.props.handleSaveArticle(this.props.article)}
+                    >Save</button>
+                    </section> 
 
-                {/* <MyArticles handleSaveArticle={this.handleSaveArticle}/> */}
+                    {/* <MyArticles handleSaveArticle={this.handleSaveArticle}/> */}
+                </div>
             </div>
         )
     }

@@ -52,7 +52,7 @@ addToComment = () => {
             comment: [...this.state.comment, res.data[1]],
             input: ''
         })
-        console.log(this.state)
+        console.log(this.state.comment)
     })
 }
 
@@ -88,21 +88,13 @@ updateState = updatedComment => {
                 <section className='article-box-myArticles'>
                     
                 { savedArticles.map((element, index) => {
-                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle}/>
-                })}
+                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle} />
                 
-               </section>
+                })}
 
-               <section>
-                   {this.state.comment.map((element, index) => {
-                       return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState}/>
-                   })}
-               </section>
-
-                <section>
-                    
                     <input 
-                    placeholder='Comment' 
+                    id='comment-box'
+                    placeholder='Comments' 
                     name='input'
                     value={this.state.input}
                     onChange={e => this.handleInput(e)}
@@ -111,6 +103,15 @@ updateState = updatedComment => {
                             this.addToComment()
                         }
                     }}/>
+                    
+                
+                <section>
+                    {this.state.comment.map((element, index) => {
+                        return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState}/>
+                    })}
+                </section>
+               
+
                 </section>
             </div>
         )

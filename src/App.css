@@ -1,35 +1,105 @@
 body {
+  height: 1000px;
   margin: 20px;
-  background-color: rgb(245, 151, 179);
-  /* background-image: url('https://media.gettyimages.com/photos/american-flag-blowing-and-rippling-in-the-wind-against-blue-sky-picture-id1150378713');
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url('https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   background-size: cover;
-  background-position: center; */
+}
+
+#feed-display {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.articles-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 98vw;
+  justify-content: center
 }
 
 #header {
   height: 30px;
-  background-color: blue;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+#comment-box {
+  position: absolute;
+  right: 100px;
 }
 
 .article-box-feed {
-  height: 300px;
-  width: 300px;
-  border: 1px solid black;
-  background-color: antiquewhite
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border: .6px solid white;
+  color: white;
+  margin: 20px; 
+  box-shadow: 5;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
 }
 
 .article-box-myArticles {
-  height: 300px;
-  width: 300px;
-  border: 1px solid black;
-  margin: 20px;
-  background-color: antiquewhite
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 98vw;
+  justify-content: center
 }
 
 .single-article {
-  height: 100px;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border: .6px solid white;
+  color: white;
+  margin: 20px; 
+  box-shadow: 5;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+button {
+  height: 40px;
   width: 100px;
-  border: 1px solid black;
-  margin: 20px;
-  background-color: rgb(24, 50, 201)
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.save-button {
+  display: flex;
+  align-items: baseline;
+}
+
+#comment-box {
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px;
 }

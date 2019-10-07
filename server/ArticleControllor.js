@@ -1,4 +1,6 @@
 const savedList = []
+const comments = []
+
 
 module.exports = {
     saveArticle(req, res) {

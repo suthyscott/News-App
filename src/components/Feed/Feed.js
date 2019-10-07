@@ -53,7 +53,10 @@ class Feed extends React.Component {
                    <button>My Articles</button>
                 </Link>
                 </section>
+
+                <section className="articles-display">
                {articles}
+               </section>
             </div>
         )
     }
