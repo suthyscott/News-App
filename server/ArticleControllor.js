@@ -15,8 +15,16 @@ module.exports = {
     // },
 
     addItem(req, res) {
-        const {addOn} = req.body;
-         savedList.push(addOn)
+        const {title, comment} = req.body;
+
+        const index = savedList.findIndex((element) => {
+            return element.title === title
+        })
+
+        if(!savedList[index].comment) {
+            savedList[index].comment = []
+        }
+         savedList[index].comment.push(comment)
          console.log(savedList)
          res.status(200).send(savedList)
     },

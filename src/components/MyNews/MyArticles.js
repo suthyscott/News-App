@@ -36,25 +36,20 @@ export default class MyArticles extends Component {
     
 // }
 
-handleInput = e => {
-    console.log('hit handleInput')
-    const {name, value} = e.target;
-    this.setState({[name]: value})
-}
 
-addToComment = () => {
-    console.log(this.state)
-    const addOn = this.state.input
-    axios.post('/api/savedList', {addOn}) .then(res => {
-        console.log(res.data)
-        console.log(this.state.comment)
-        this.setState({
-            comment: [...this.state.comment, res.data[1]],
-            input: ''
-        })
-        console.log(this.state.comment)
-    })
-}
+// addToComment = () => {
+//     console.log(this.state)
+//     const addOn = this.state.input
+//     axios.post('/api/savedList', {addOn}) .then(res => {
+//         console.log(res.data)
+//         console.log(this.state.comment)
+//         this.setState({
+//             comment: [...this.state.comment, res.data[res.data.length-1]],
+//             input: ''
+//         })
+//         console.log(this.state.comment)
+//     })
+// }
 
 delete = index => {
     axios.delete(`/api/savedList/${index}`).then(response => {
@@ -73,9 +68,12 @@ deleteArticle = index => {
 }
 
 updateState = updatedComment => {
+    console.log(this.state.comment)
+    console.log(updatedComment)
     this.setState({
          comment: updatedComment
     })
+    console.log(this.state.comment)
 }
 
 
@@ -88,23 +86,12 @@ updateState = updatedComment => {
                 <section className='article-box-myArticles'>
                     
                 { savedArticles.map((element, index) => {
-                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle} />
+                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle} addComment={this.props.addComment}/>               
                 
                 })}
-
-                    <input 
-                    id='comment-box'
-                    placeholder='Comments' 
-                    name='input'
-                    value={this.state.input}
-                    onChange={e => this.handleInput(e)}
-                    onKeyDown={e => {
-                        if (e.key === 'Enter') {
-                            this.addToComment()
-                        }
-                    }}/>
                     
-                
+        
+
                 <section>
                     {this.state.comment.map((element, index) => {
                         return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState}/>
@@ -112,6 +99,10 @@ updateState = updatedComment => {
                 </section>
                
 
+                </section>
+
+                <section>
+                   
                 </section>
             </div>
         )

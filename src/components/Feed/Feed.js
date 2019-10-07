@@ -50,7 +50,7 @@ class Feed extends React.Component {
             <div>
                 <section id='header'>
                <Link to='/myarticles'>
-                   <button>My Articles</button>
+                   <button id='my-articles-button'>My Articles</button>
                 </Link>
                 </section>
 

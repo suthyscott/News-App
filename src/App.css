@@ -32,10 +32,10 @@ body {
   justify-content: center;
 }
 
-#comment-box {
+/* #comment-box {
   position: absolute;
   right: 100px;
-}
+} */
 
 .article-box-feed {
   height: 200px;
@@ -62,8 +62,8 @@ body {
 }
 
 .single-article {
-  height: 200px;
-  width: 200px;
+  height: 400px;
+  width: 250px;
   padding: 10px;
   border: .6px solid white;
   color: white;
@@ -91,6 +91,12 @@ button {
 .save-button {
   display: flex;
   align-items: baseline;
+  
+}
+
+#specific-save-button {
+  background-color: white;
+  color: rgb(46, 137, 241);
 }
 
 #comment-box {
@@ -102,4 +108,15 @@ button {
   font-size: 15px;
   margin: 5px;
   padding: 5px;
+}
+
+#my-articles-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: rgb(46, 137, 241);
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  margin: 5px;
 }
