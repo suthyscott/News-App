@@ -6,6 +6,8 @@ import Article from './Article';
 import Header from '../Header'
 import {Link} from 'react-router-dom'
 
+const config = require('../../Config')
+
 class Feed extends React.Component {
     constructor(props){
         super(props)
@@ -17,7 +19,7 @@ class Feed extends React.Component {
 
     // this is getting the array of articles from Google API
     componentDidMount(){
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=3a0d4ebfb4fa4a7bb1fe6f3b60d5ff13', )
+        axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${config.apiKey}`, )
         .then(res => {
             this.setState({
                 feed: res.data.articles
