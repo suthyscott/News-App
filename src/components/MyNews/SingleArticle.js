@@ -11,14 +11,13 @@ export default class SingleArticle extends Component {
     }
 
     handleInput = e => {
-        console.log('hit handleInput')
+        
         const {name, value} = e.target;
         this.setState({[name]: value})
     }
 
     render() {
-        console.log(this.props.element)
-        console.log(this.props.element.comment)
+        
         if(!this.props.element.comment) {
             this.props.element.comment = []
         }
@@ -26,6 +25,16 @@ export default class SingleArticle extends Component {
             <div>
                 <div className='single-article'>
                     {this.props.element.title}
+
+                    {/* <button className='url-button'>
+                    {this.props.element.url}
+                    </button> */}
+
+                    <div className='description'>
+                    {this.props.element.description}
+                    </div>
+
+                    <button className='specific-save-button'>Remove</button>
 
                     <input 
                     id='comment-box'

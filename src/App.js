@@ -33,7 +33,7 @@ class App extends React.Component {
     axios.post('/api/savedList', {title, comment}) .then(res => {
         this.setState({
             savedArticles: res.data
-        })
+        }, () => {console.log(this.state.savedArticles)})
     })
   }
 

@@ -80,6 +80,7 @@ updateState = updatedComment => {
     render(){
         // console.log(this.state.list)
         console.log(this.props.savedArticles)
+        console.log('hit render', this.state.comment)
         let {savedArticles} = this.props
         return (
             <div>
@@ -92,12 +93,12 @@ updateState = updatedComment => {
                     
         
 
-                <section>
-                    {this.state.comment.map((element, index) => {
+                {/* <section>
+                    {savedArticles.map((element, index) => {
                         return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState}/>
                     })}
                 </section>
-               
+                */}
 
                 </section>
 

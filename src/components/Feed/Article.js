@@ -26,7 +26,7 @@ class Article extends React.Component {
 
                     <section className='save-button'>                
                     <button onClick={() => this.props.handleSaveArticle(this.props.article)}
-                    id='specific-save-button'>Save</button>
+                    className='specific-save-button'>Save</button>
                     </section> 
 
                     {/* <MyArticles handleSaveArticle={this.handleSaveArticle}/> */}

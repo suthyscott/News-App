@@ -38,7 +38,7 @@ class MyArticle extends Component {
     }
 
     render(){
-        console.log(this.props.element)
+        console.log('hit render')
         return(
             <div>
 
@@ -56,7 +56,7 @@ class MyArticle extends Component {
         ) : (
           <section className='comment-tools'>
     
-            {this.props.element}
+            {this.props.element.comment}
             <button onClick={() => this.props.delete(this.props.index)}>Delete</button>
             <button onClick={() => this.edit()}>EDIT</button>
           </section>

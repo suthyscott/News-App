@@ -73,7 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-radius: 10px;
 }
 
@@ -94,7 +94,20 @@ button {
   
 }
 
-#specific-save-button {
+.url-button {
+  height: 50px;
+  width: 240px;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid white;
+  color: rgb(46, 137, 241);
+  font-size: 12px;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.specific-save-button {
   background-color: white;
   color: rgb(46, 137, 241);
 }
@@ -104,7 +117,7 @@ button {
   width: 150px;
   border-radius: 10px;
   background-color: white;
-  border: 1px solid gray;
+  border: 1px solid rgb(46, 137, 241);
   font-size: 15px;
   margin: 5px;
   padding: 5px;
@@ -118,5 +131,13 @@ button {
   border: 1px solid white;
   color: white;
   font-size: 15px;
+  margin: 1px;
+}
+
+.description {
+  height: 100px;
+  width: 240px;
+  font-size: 14px;
   margin: 5px;
+
 }
