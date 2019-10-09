@@ -29,12 +29,11 @@ class MyArticle extends Component {
         axios
             .put('/api/savedList', {index, newItem})
             .then(res => this.props.updateState(res.data))
-
             // console.log(res.data)
 
-        this.setState({
-            editing: false
-        })
+            this.setState({
+                editing: false
+            })
     }
 
     render(){
@@ -58,7 +57,7 @@ class MyArticle extends Component {
     
             {this.props.element}
             <button onClick={() => this.props.delete(this.props.index)}>Delete</button>
-            <button onClick={() => this.edit()}>EDIT</button>
+            <button onClick={() => this.edit()}>Edit</button>
           </section>
         )}
       </div>

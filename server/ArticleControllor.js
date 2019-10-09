@@ -1,5 +1,5 @@
 const savedList = []
-const comments = []
+const comment = []
 
 
 module.exports = {
@@ -25,13 +25,14 @@ module.exports = {
             savedList[index].comment = []
         }
          savedList[index].comment.push(comment)
-         console.log(savedList)
+        //  console.log(savedList)
          res.status(200).send(savedList)
     },
 
     editItem(req, res){
         const {index, newItem} = req.body;
         savedList[index] = newItem;
+        console.log(savedList)
         res.status(200).send(savedList)
     },
 

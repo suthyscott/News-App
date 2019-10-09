@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Comment from './Comment'
+import MyArticle from './MyArticle'
+import axios from 'axios'
 
 export default class SingleArticle extends Component {
     constructor(props) {
@@ -16,13 +18,30 @@ export default class SingleArticle extends Component {
         this.setState({[name]: value})
     }
 
+    // delete = index => {
+    //     axios.delete(`/api/savedList/${index}`).then(response => {
+    //         this.setState({
+    //             comment: response.data
+    //         })
+    //     })
+    // }
+
+    // updateState = updatedComment => {
+    //     console.log(this.state.comment)
+    //     console.log(updatedComment)
+    //     this.setState({
+    //          comment: updatedComment
+    //     })
+    //     console.log(this.state.comment)
+    // }
+
     render() {
         console.log(this.props.element)
         console.log(this.props.element.comment)
         if(!this.props.element.comment) {
             this.props.element.comment = []
         }
-        return(
+        return( 
             <div>
                 <div className='single-article'>
                     {this.props.element.title}
@@ -39,15 +58,19 @@ export default class SingleArticle extends Component {
                         }
                     }}/>
 
-                    {/* <button>
-                    Comment
-                    </button> */}
-
                     {this.props.element.comment.map(element => {
                         return <Comment element={element}/>
                     })}
+
+                {/* <section>
+                    {this.props.element.comment.map((element, index) => {
+                        return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState} comment={this.props.element.comment}/>
+                    })}
+                </section> */}
                 </div>
                 
+                
+
             </div>
         
         )

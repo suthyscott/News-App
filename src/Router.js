@@ -9,7 +9,7 @@ export default class Router extends React.Component {
         return(
             <Switch>
                 <Route exact path='/' render={(props) => <Feed handleSaveArticle={this.props.handleSaveArticle}/>} />
-                <Route path='/myarticles' render={(props) => <MyArticles savedArticles={this.props.savedArticles} addComment={this.props.addComment}/> } />
+                <Route path='/myarticles' render={(props) => <MyArticles savedArticles={this.props.savedArticles} addComment={this.props.addComment} save={this.props.save}/> } />
                 
                 
             </Switch>

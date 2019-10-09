@@ -37,12 +37,21 @@ class App extends React.Component {
     })
   }
 
+  save = (index, newItem) =>{
+    axios.put('/api/savedList', {index, newItem})
+    .then(res => {
+      this.setState({
+        savedArticles: res.data
+      })
+    })
+  }
+
   render() {
   
     return (
           <HashRouter >
           <div >
-            <Router handleSaveArticle={this.handleSaveArticle} savedArticles={this.state.savedArticles} addComment={this.addComment}/>
+            <Router handleSaveArticle={this.handleSaveArticle} savedArticles={this.state.savedArticles} addComment={this.addComment} save={this.save}/>
             
           </div>
           </HashRouter>
