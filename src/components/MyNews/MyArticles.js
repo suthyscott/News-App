@@ -52,7 +52,7 @@ export default class MyArticles extends Component {
                 <section className='article-box-myArticles'>
                     
                 { savedArticles.map((element, index) => {
-                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle} addComment={this.props.addComment} save={this.props.save}/>               
+                return <SingleArticle element={element} index={index} deleteArticle={this.deleteArticle} addComment={this.props.addComment} save={this.props.save} delete={this.props.delete}/>               
                 
                 })}
                     

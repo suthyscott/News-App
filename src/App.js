@@ -34,11 +34,12 @@ class App extends React.Component {
         this.setState({
             savedArticles: res.data
         })
+        console.log(res.data)
     })
   }
 
-  save = (index, newItem) =>{
-    axios.put('/api/savedList', {index, newItem})
+  save = (title, newItem, id) =>{
+    axios.put(`/api/savedList/${id}`, {title, newItem})
     .then(res => {
       this.setState({
         savedArticles: res.data
@@ -46,12 +47,20 @@ class App extends React.Component {
     })
   }
 
+  delete = (title, id) => {
+    axios.delete(`/api/savedList/${title}/${id}`).then(response => {
+        this.setState({
+            savedArticles: response.data
+        })
+    })
+}
+
   render() {
   
     return (
           <HashRouter >
           <div >
-            <Router handleSaveArticle={this.handleSaveArticle} savedArticles={this.state.savedArticles} addComment={this.addComment} save={this.save}/>
+            <Router handleSaveArticle={this.handleSaveArticle} savedArticles={this.state.savedArticles} addComment={this.addComment} save={this.save} delete={this.delete}/>
             
           </div>
           </HashRouter>

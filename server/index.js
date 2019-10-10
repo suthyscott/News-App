@@ -12,15 +12,11 @@ const ac = require('./ArticleControllor')
 
 app.post('/api/article', ac.saveArticle )
 
-// app.get('/api/savedList', ac.updateList )
-
 app.post('/api/savedList', ac.addItem)
 
-app.put('/api/savedList', ac.editItem)
+app.put('/api/savedList/:id', ac.editItem)
 
-app.delete('/api/savedList/:index', ac.deleteItem)
-
-// app.delete('/api/displayedList/:index', ac.deleteArticle)
+app.delete('/api/savedList/:title/:id', ac.deleteItem)
 
 
 

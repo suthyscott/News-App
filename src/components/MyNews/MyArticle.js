@@ -47,8 +47,7 @@ class MyArticle extends Component {
             <input
               value={this.state.editInput}
               name="editInput"
-              onChange={e => this.handleInput(e)}
-              
+              onChange={e => this.handleInput(e)}              
             />
             <button onClick={() => this.save()}>Save</button>
           </article>

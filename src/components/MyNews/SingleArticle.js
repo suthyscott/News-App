@@ -18,13 +18,7 @@ export default class SingleArticle extends Component {
         this.setState({[name]: value})
     }
 
-    // delete = index => {
-    //     axios.delete(`/api/savedList/${index}`).then(response => {
-    //         this.setState({
-    //             comment: response.data
-    //         })
-    //     })
-    // }
+    
 
     // updateState = updatedComment => {
     //     console.log(this.state.comment)
@@ -58,8 +52,8 @@ export default class SingleArticle extends Component {
                         }
                     }}/>
 
-                    {this.props.element.comment.map(element => {
-                        return <Comment element={element}/>
+                    {this.props.element.comment.map((element, commentIndex) => {
+                        return <Comment element={element} save={this.props.save} delete={this.props.delete} title={this.props.element.title}/>
                     })}
 
                 {/* <section>

@@ -1,5 +1,6 @@
 const savedList = []
 const comment = []
+let id = 1
 
 
 module.exports = {
@@ -24,27 +25,39 @@ module.exports = {
         if(!savedList[index].comment) {
             savedList[index].comment = []
         }
-         savedList[index].comment.push(comment)
-        //  console.log(savedList)
+
+        const newComment = {id: id, comment: comment}
+        id++
+         savedList[index].comment.push(newComment)
          res.status(200).send(savedList)
     },
 
     editItem(req, res){
-        const {index, newItem} = req.body;
-        savedList[index] = newItem;
-        console.log(savedList)
+        const {title, newItem} = req.body;
+        const {id} = req.params
+        const index = savedList.findIndex((element) => {
+            return element.title === title
+        }) 
+        const commentIndex = savedList[index].comment.findIndex(element => {
+            return element.id === +id
+        })
+        savedList[index].comment[commentIndex].comment = newItem;
         res.status(200).send(savedList)
     },
 
     deleteItem(req, res) {
-        const {index} = req.params;
-        savedList.splice(index, 1)
+        const {title, id} = req.params;
+        const index = savedList.findIndex(element => {
+            return element.title === title
+        })
+
+        const commentIndex = savedList[index].comment.findIndex(element => {
+            return element.id === +id
+        })
+        savedList[index].comment.splice(commentIndex, 1)
+        console.log(savedList)
         res.status(200).send(savedList)
     },
 
-    // deleteArticle(req, res) {
-    //     const {index} = req.params;
-    //     savedList.splice(index, 1)
-    //     res.status(200).send(savedList)
-    // }
+ 
 }
