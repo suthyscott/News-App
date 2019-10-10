@@ -5,15 +5,9 @@ let id = 1
 
 module.exports = {
     saveArticle(req, res) {
-        // console.log(req.body)
         savedList.push(req.body)
         res.status(200).send(savedList)
-        console.log(savedList)
     }, 
-
-    // updateList(req, res) {
-    //     res.status(200).send(savedList)
-    // },
 
     addItem(req, res) {
         const {title, comment} = req.body;
@@ -55,7 +49,6 @@ module.exports = {
             return element.id === +id
         })
         savedList[index].comment.splice(commentIndex, 1)
-        console.log(savedList)
         res.status(200).send(savedList)
     },
 

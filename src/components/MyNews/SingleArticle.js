@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import Comment from './Comment'
-import MyArticle from './MyArticle'
-import axios from 'axios'
 
 export default class SingleArticle extends Component {
     constructor(props) {
@@ -13,25 +11,12 @@ export default class SingleArticle extends Component {
     }
 
     handleInput = e => {
-        console.log('hit handleInput')
         const {name, value} = e.target;
+        // this name is how it knows where
         this.setState({[name]: value})
     }
 
-    
-
-    // updateState = updatedComment => {
-    //     console.log(this.state.comment)
-    //     console.log(updatedComment)
-    //     this.setState({
-    //          comment: updatedComment
-    //     })
-    //     console.log(this.state.comment)
-    // }
-
     render() {
-        console.log(this.props.element)
-        console.log(this.props.element.comment)
         if(!this.props.element.comment) {
             this.props.element.comment = []
         }
@@ -39,6 +24,10 @@ export default class SingleArticle extends Component {
             <div>
                 <div className='single-article'>
                     {this.props.element.title}
+
+                    <section className='article-description'>
+                    {this.props.element.description}
+                    </section>
 
                     <input 
                     id='comment-box'
@@ -55,12 +44,6 @@ export default class SingleArticle extends Component {
                     {this.props.element.comment.map((element, commentIndex) => {
                         return <Comment element={element} save={this.props.save} delete={this.props.delete} title={this.props.element.title}/>
                     })}
-
-                {/* <section>
-                    {this.props.element.comment.map((element, index) => {
-                        return <MyArticle element={element} index={index} delete={this.delete} updateState={this.updateState} comment={this.props.element.comment}/>
-                    })}
-                </section> */}
                 </div>
                 
                 
@@ -72,7 +55,5 @@ export default class SingleArticle extends Component {
 
     
 } 
-
-{/* <button onClick={() => this.props.deleteArticle(this.props.index)}>Delete</button> */}
 
 

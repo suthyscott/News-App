@@ -14,8 +14,7 @@ export default class Comment extends Component {
         const {name, value } = e.target;
         this.setState({ [name]: value })
     }
-
-    // Does this function need to be connected to this.props.element somehow?
+    
     edit = () => {
         const {editing} = this.state;
         this.setState({

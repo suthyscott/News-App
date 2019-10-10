@@ -18,7 +18,6 @@ class App extends React.Component {
   handleSaveArticle = (article) => {
     
     axios.post('/api/article', article).then(res => {
-      // console.log(res.data)
         this.setState({
             savedArticles: res.data
         })
@@ -29,7 +28,6 @@ class App extends React.Component {
   }
 
   addComment = (title, comment) => {
-    console.log('hit function')
     axios.post('/api/savedList', {title, comment}) .then(res => {
         this.setState({
             savedArticles: res.data

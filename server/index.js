@@ -8,7 +8,6 @@ const app = express()
 app.use(express.json())
 
 const ac = require('./ArticleControllor')
-// make endpoints here
 
 app.post('/api/article', ac.saveArticle )
 
@@ -22,5 +21,5 @@ app.delete('/api/savedList/:title/:id', ac.deleteItem)
 
 
 app.listen(SERVER_PORT, () => {
-    console.log(`Running on server ${SERVER_PORT}`)
+    console.log(`Take us to warp ${SERVER_PORT}!`)
 })

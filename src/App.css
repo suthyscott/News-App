@@ -32,11 +32,6 @@ body {
   justify-content: center;
 }
 
-/* #comment-box {
-  position: absolute;
-  right: 100px;
-} */
-
 .article-box-feed {
   height: 200px;
   width: 200px;
@@ -119,4 +114,10 @@ button {
   color: white;
   font-size: 15px;
   margin: 5px;
+}
+
+.article-description {
+  height: 200px;
+  width: 280px;
+  font-size: 16px;
 }
